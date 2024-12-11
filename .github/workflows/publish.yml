@@ -16,7 +16,7 @@ jobs:
 
       - name: npmrcgen
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PAT }}" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
           echo "@maanuvazquez=https://npm.pkg.github.com/" >> .npmrc
 
       - uses: pnpm/action-setup@v4
@@ -37,7 +37,8 @@ jobs:
 
       - name: Create Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pnpm auto shipit
 
