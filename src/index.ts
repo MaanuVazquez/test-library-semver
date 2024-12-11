@@ -13,4 +13,10 @@ function fibonacciAsync(n: number) {
 	});
 }
 
-export { fibonacci, fibonacciAsync };
+function noop() {}
+
+function sleep(ms: number) {
+	return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+export { fibonacci, fibonacciAsync, noop, sleep };
