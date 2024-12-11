@@ -41,8 +41,3 @@ jobs:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pnpm auto shipit
-
-      - name: CAT
-        run: |
-          cat .npmrc
-        shell: bash
