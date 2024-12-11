@@ -5,4 +5,12 @@ function fibonacci(n: number) {
 	return add(fibonacci(subtract(n, 1)), fibonacci(subtract(n, 2)));
 }
 
-export { fibonacci };
+function fibonacciAsync(n: number) {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve(fibonacci(n));
+		}, 1000);
+	});
+}
+
+export { fibonacci, fibonacciAsync };
