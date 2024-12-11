@@ -1,11 +1,13 @@
 {
 	"name": "@maanuvazquez/test-library-semver",
-	"version": "0.0.0",
+	"version": "0.2.0",
 	"description": "",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "tsup",
 		"dev": "tsup --watch",
@@ -43,7 +45,12 @@
 					"setRcToken": false
 				}
 			],
-			["conventional-commits", { "defaultReleaseType": "patch" }]
+			[
+				"conventional-commits",
+				{
+					"defaultReleaseType": "patch"
+				}
+			]
 		]
 	}
 }
